@@ -113,12 +113,12 @@ repos:
       - id: pylint
         name: pylint
         entry: pylint
+        language: system  # Usar o pylint do sistema
         types: [python]
         args:
-          - "-rn"  # Only display messages
-          - "-sn"  # Don't display score
-          - "-rcfile=.pylintrc"  # Link to your config file
-          - "--load-plugins=pylint.extensions.docparams"  # Load an extension
+          - "--disable=R,C"  # Desativa categorias de mensagens específicas
+          - "--rcfile=.pylintrc"  # Corrigido: arquivo de configuração do pylint
+          - "--load-plugins=pylint.extensions.docparams"  # Carrega o plugin docparams
 ```
 3. Rodar o comando:
 ```bash

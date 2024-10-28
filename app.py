@@ -1,2 +1,0 @@
-def oiMundo():
-   print('oi')

@@ -6,7 +6,6 @@ disable=
     C0116,  # Missing function or method docstring
     W0703,  # Catching too general exception
     C0209,  # String formatting using f-string instead of `%` or `.format()`
-    C0303,  # Trailing whitespace (trailing-whitespace)
     E0015,  # Python syntax error
 
 

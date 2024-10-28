@@ -95,3 +95,33 @@ disable=
 ```bash
 pylint "nome seu arquivo python"
 ```
+
+---
+
+## Pre-commit
+
+1. Instalar
+```bash
+pip install pre-commit
+```
+2. Configuração pre-commit:
+- criar arquivo ".pre-commit-config.yaml" e colocar:
+```bash
+repos:
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        types: [python]
+        args:
+          - "-rn"  # Only display messages
+          - "-sn"  # Don't display score
+          - "-rcfile=.pylintrc"  # Link to your config file
+          - "--load-plugins=pylint.extensions.docparams"  # Load an extension
+```
+3. Rodar o comando:
+```bash
+pre-commit install
+```
+

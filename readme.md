@@ -24,45 +24,62 @@ Este repositório foi desenvolvido para demonstrar como estruturar um projeto ut
    pip install virtualenv
 
 2. Crie o ambiente virtual:
+   ```bash
+   python -m venv venv
+   
+3. Ative o ambiente virtual (Windows):
+   ```bash
+   .\venv\Scripts\activate
 
--- ambiente virtuais
-pip install virtualenv
-python -m venv venv
-/Scripts/activate
+4. Selecione o interpretador Python no VSCode (Pressione Ctrl + P):
+   ```mathematica
+   > Select Interpreter
+- Escolha o ambiente virtual criado (venv).
 
-Selecionar interpretador no VsCode:
-Ctrl + p: > select interpreter
-selecione a opção venv
+---
 
-Pylint, fornece uma análise de código
+## 🔍 Configuração do Pylint
+### Pylint, fornece uma análise de código
+1. Instalação
+```bash
 pip install pylint
-
-Listar bibliotecas do venv em um arquivo:
-para windows: pip freeze > requirements.txt
-
-Instalar todas as dependencias de uma vez:
+```
+2. Listar bibliotecas do venv em um arquivo (para windows):
+```bash
+pip freeze > requirements.txt
+```
+3. Instalar todas as dependencias de uma vez:
+```bash
 pip install -r requirements.txt
+```
+### Instale a extensão no VsCode do Pylint.
 
-- Instalar extensão no vsCode do pylint.
-- Forçar o vscode entender o pylint:
-criar uma pasta ".vscode" e dentro dela um settings.json
-nele colocar:
+---
+
+### Forçar o vscode entender o pylint:
+1. Criar uma pasta ".vscode" e dentro dela um "settings.json"
+```json
 {
    "python.linting.enabled": true,
    "python.linting.pylintEnabled": true
 }
-Para reforçar mais, pode colocar as seguintes linhas no arquivo settings JSON:
+```
+### Para reforçar mais, pode colocar as seguintes linhas no arquivo settings JSON:
+```json
 {
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": ["--rcfile=.pylintrc"]
 }
+```
+## Configurar Pylint para windows:
+```bash
+pylint --generate-rc-file | out-file -encoding utf8 .pylintrc
+```
 
-Configurar Pylint:
-para windows: pylint --generate-rc-file | out-file -encoding utf8 .pylintrc
-
-Desativar algumas configurações chatas do pylint:
-No arquivo .pylintrc que criou anteriormente faça:
+### Desativar algumas configurações chatas do pylint:
+**No arquivo .pylintrc que criou anteriormente faça:**
+```bash
 [MAIN]
 
 disable=
@@ -73,6 +90,8 @@ disable=
     C0209,  # String formatting using f-string instead of `%` or `.format()`
     C0303,  # Trailing whitespace (trailing-whitespace)
     E0015,  # Python syntax error
-
-Testar o Pylint:
+```
+### Testar o Pylint:
+```bash
 pylint "nome seu arquivo python"
+```

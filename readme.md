@@ -87,7 +87,10 @@ disable=
     C0115,  # Missing class docstring
     C0116,  # Missing function or method docstring
     W0703,  # Catching too general exception
+    W0311,  # Bad identation
     C0209,  # String formatting using f-string instead of `%` or `.format()`
+    C0303,  # Trailing whitespace
+    C0304,  # Final new line missing
     E0015,  # Python syntax error
 ```
 ### Testar o Pylint:

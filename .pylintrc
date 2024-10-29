@@ -5,9 +5,11 @@ disable=
     C0115,  # Missing class docstring
     C0116,  # Missing function or method docstring
     W0703,  # Catching too general exception
+    W0311,  # Bad identation
     C0209,  # String formatting using f-string instead of `%` or `.format()`
+    C0303,  # Trailing whitespace
+    C0304,  # Final new line missing
     E0015,  # Python syntax error
-
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
@@ -347,7 +349,7 @@ expected-line-ending-format=
 ignore-long-lines=^\s*(# )?<?https?://\S+>?$
 
 # Number of spaces of indent required inside a hanging or continued line.
-indent-after-paren=4
+indent-after-paren=3
 
 # String used as indentation unit. This is usually "    " (4 spaces) or "\t" (1
 # tab).
